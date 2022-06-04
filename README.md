@@ -80,5 +80,30 @@ Its actually easy to fix/workaround these limitations.
       ```py
       .parse_args(sys.argv[2:])
       ```
+## Adding in PIP Packages
+Its actually really easy!     
 
+Just import them into the base code:
 
+```py
+import package1
+import module1
+
+from sys import argv, exit
+from runpy import run_path
+if len(argv) == 1: exit()
+file = argv[1]; args = {}
+for index, arg in enumerate(argv[2:]): args[index] = arg
+run_path(file, init_globals=args)
+```
+
+and just compile the script!
+
+## Compiling the Onefile Python Interpreter
+To compile your onefile python interpreter, do the following.
+
+1. Install the following PIP packages.
+   ```bat
+   pip install nuitka zstandard ordered-set
+   ```
+2. Run `build.bat` and you are good to go!   
