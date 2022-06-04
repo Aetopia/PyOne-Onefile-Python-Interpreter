@@ -80,7 +80,7 @@ Its actually easy to fix/workaround these limitations.
       ```py
       .parse_args(sys.argv[2:])
       ```
-## Adding in PIP Packages
+## Adding in PIP Packages/User Made Modules
 Its actually really easy!     
 
 Just import them into the base code:
