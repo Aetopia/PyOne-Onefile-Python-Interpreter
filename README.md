@@ -20,7 +20,7 @@ from runpy import run_path
 if len(argv) == 1: exit()
 file = argv[1]; args = {}
 for index, arg in enumerate(argv[2:]): args[index] = arg
-run_path(file, init_globals=args)
+run_path(file, init_globals=args, run_name='__main__')
 ```
 We take advantage of `runpy.run_path` to execute our python scripts.
 
@@ -94,7 +94,7 @@ from runpy import run_path
 if len(argv) == 1: exit()
 file = argv[1]; args = {}
 for index, arg in enumerate(argv[2:]): args[index] = arg
-run_path(file, init_globals=args)
+run_path(file, init_globals=args, run_name='__main__')
 ```
 
 and just compile the script!
