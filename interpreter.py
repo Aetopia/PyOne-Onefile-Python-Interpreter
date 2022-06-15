@@ -18,7 +18,7 @@ def main():
     else:
         file = argv[1]; args = {}
         for index, arg in enumerate(argv[2:]): args[index] = arg
-        run_path(file, init_globals=args)
+        run_path(file, init_globals=args, run_name='__main__')
 
 if __name__ == '__main__':
     main()
