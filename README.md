@@ -54,18 +54,13 @@ Thus, this can mess with any scripts that deal with `sys.argv` or `argparse`.
 Its actually easy to fix/workaround these limitations.
 
 1. Fixing duplicate filepath entires.        
-   Add the following at the beginning your script.
-   
+   Add the following at the beginning your script.         
+   **Customize this workaround according to your needs!**
    ```py
-   from sys import argv # Imports sys.argv
-   if argv[0] is argv[1]: argv = argv[1:]
-   ```
-   
-   OR
-   
-   ```py
-   import sys
-   if sys.argv[0] is sys.argv[1]: sys.argv = sys.argv[1:]
+   from sys import argv
+   if len(argv) >= 2:
+      if argv[0] == argv[1]:
+         argv = argv[1:]   
    ```
 2. Fixing parsing issues with `argparse`.                  
    `argparse` doesn't respect the first workaround directly so we will need to explictly tell what arguments to parse.
